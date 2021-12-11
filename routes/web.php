@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\ReferralController;
+use App\Http\Controllers\RewardController;
+use App\Http\Controllers\TierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +25,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('purchase', PurchaseController::class,[
+    'only' => ['index']
+]);
+Route::resource('referral', ReferralController::class);
+Route::resource('reward', RewardController::class);
+Route::resource('tier', TierController::class);

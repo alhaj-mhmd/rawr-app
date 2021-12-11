@@ -1,0 +1,55 @@
+#
+php artisan  migrate:refresh
+
+#
+php artisan rout:list
+
+#
+{{ __('messages.products') }}
+
+# to make only Model Class
+php artisan make:model Customer
+
+# to make resource controller
+php artisan make:controller CustomersController --resource
+
+# make controller for already existing Model Class (binded to model)
+php artisan make:controller CustomersController --model=Customer
+
+# to make  model, migration and controller and factory all in one command
+php artisan make:model Modelname -crmf
+
+#laravel make model with migration and controller
+php artisan make:model Todo -mcr
+
+#laravel create model controller and migration on line
+php artisan make:model Todo -a
+
+=====
+Model:
+php artisan make:model YourModelName
+Controller:
+php artisan make:controller YourControllerName
+Migration:
+php artisan make:migration create_users_table
+Each of these commands have options that you can use. For example you can make a controller for an existing Model or etc.
+As an example you may use these options as below to create a controller and migration for your Model:
+php artisan make:model YourModelName -c -m
+You can access a list of all options by using the help option for each model , controller and migration. For example:
+php artisan make:model --help
+The following details show the most used/basic options for all commands above separately.
+Model:
+-a or — all Generate a migration, seeder, factory, and resource controller for the model
+-c or — controller Create a new controller for the model
+— force Create the class even if the model already exists
+-m or — migration Create a new migration file for the model
+Controller:
+-m or — model[=MODEL] Generate a resource controller for the given model.
+-r or — resource Generate a resource controller class.
+
+===
+php artisan make:model Purchase -a
+php artisan make:model Referral -a
+php artisan make:model Reward -a
+php artisan make:model Tier -a
+ 

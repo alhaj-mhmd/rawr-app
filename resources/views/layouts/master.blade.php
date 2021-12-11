@@ -20,6 +20,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+      <!-- Custom styles for this page -->
+      <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -67,7 +69,7 @@
                 <div id="purchases" class="collapse" aria-labelledby="purchases" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Purchases</h6>
-                        <a class="collapse-item" href="#">All Purchases</a>
+                        <a class="collapse-item" href="{{route('purchase.index')}}">All Purchases</a>
                     </div>
                 </div>
             </li>
@@ -106,7 +108,7 @@
                 <div id="referrals" class="collapse" aria-labelledby="referrals" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Referrals</h6>
-                        <a class="collapse-item" href="#">All Referrals</a>
+                        <a class="collapse-item" href="{{route('referral.index')}}">All Referrals</a>
                     </div>
                 </div>
             </li>
@@ -119,7 +121,7 @@
                 <div id="rewards" class="collapse" aria-labelledby="rewards" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Rewards</h6>
-                        <a class="collapse-item" href="#">All Rewards</a>
+                        <a class="collapse-item" href="{{route('reward.index')}}">All Rewards</a>
                     </div>
                 </div>
             </li>
@@ -266,8 +268,14 @@
     <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+    {{-- <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script> --}}
+    <!-- Page level plugins -->
+    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
 </body>
 
