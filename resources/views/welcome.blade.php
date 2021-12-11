@@ -29,21 +29,19 @@
                     <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                     @if (Route::has('login'))
-                         
-                            @auth
-                                <li class="nav-item"> <a href="{{ url('/home') }}"
-                                        class="nav-link">Home</a></li>
-                            @else
-                                <li class="nav-item"> <a href="{{ route('login') }}"
-                                        class="nav-link">Log in</a>
+
+                        @auth
+                            <li class="nav-item"> <a href="{{ url('/home') }}" class="nav-link">Home</a></li>
+                        @else
+                            <li class="nav-item"> <a href="{{ route('login') }}" class="nav-link">Log in</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item"> <a href="{{ route('register') }}"
+                                        class="nav-link">Register</a>
                                 </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item"> <a href="{{ route('register') }}"
-                                            class="nav-link">Register</a>
-                                    </li>
-                                @endif
-                            @endauth
-                         
+                            @endif
+                        @endauth
+
                     @endif
                 </ul>
             </div>
@@ -63,10 +61,6 @@
             </div>
         </div>
     </section>
-    <!-- where our music comes from -->
-    <!-- DKC2 - Bramble Blast  -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/73n7HTcmb5g?autoplay=1" frameborder="0"
-        allowfullscreen style="display:none"></iframe>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
