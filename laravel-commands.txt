@@ -2,6 +2,9 @@
 php artisan  migrate:refresh
 
 #
+php artisan migrate --path=/database/migrations/tiers/
+
+#
 php artisan rout:list
 
 #
@@ -52,4 +55,12 @@ php artisan make:model Purchase -a
 php artisan make:model Referral -a
 php artisan make:model Reward -a
 php artisan make:model Tier -a
- 
+
+
+php artisan make:controller UserController --resource
+
+php artisan db:seed --class=TierSeeder
+php artisan db:seed --class=UserSeeder
+php artisan db:seed --class=PurchaseSeeder
+php artisan db:seed --class=ReferralSeeder
+

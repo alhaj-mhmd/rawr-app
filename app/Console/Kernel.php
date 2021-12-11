@@ -18,8 +18,9 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->call(function () {
-            DB::insert('INSERT INTO `rewards` ( `user_id`, `reward`) SELECT referrals.referrer , (amount * tiers.reward / 100) AS referrer_reward FROM purchases INNER JOIN referrals ON referrals.user_id = purchases.user_id LEFT JOIN tiers on tiers.id = referrals.tier_id WHERE date BETWEEN ( CURRENT_DATE() - INTERVAL 1 DAY) AND CURRENT_DATE');
+            DB::insert('INSERT INTO `rewards` ( `user_id`, `reward`) SELECT referrals.referrer_id , (amount * tiers.reward / 100) AS referrer_reward FROM purchases INNER JOIN referrals ON referrals.user_id = purchases.user_id LEFT JOIN tiers on tiers.id = referrals.tier_id WHERE date BETWEEN ( CURRENT_DATE() - INTERVAL 1 DAY) AND CURRENT_DATE');
         })->dailyAt('03:00');
+       //everyMinute();
     }
 
     /**

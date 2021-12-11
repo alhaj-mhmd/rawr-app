@@ -15,6 +15,12 @@ class CreateReferralsTable extends Migration
     {
         Schema::create('referrals', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('referrer_id');
+            $table->foreign('referrer_id')->references('id')->on('users');
+            $table->unsignedBigInteger('tier_id');
+            $table->foreign('tier_id')->references('id')->on('tiers');
             $table->timestamps();
         });
     }

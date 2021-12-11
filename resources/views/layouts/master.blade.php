@@ -61,6 +61,19 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#users"
+                    aria-expanded="true" aria-controls="users">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Users</span>
+                </a>
+                <div id="users" class="collapse" aria-labelledby="users" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Users</h6>
+                        <a class="collapse-item" href="{{route('user.index')}}">All Users</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#purchases"
                     aria-expanded="true" aria-controls="purchases">
                     <i class="fas fa-fw fa-cog"></i>
@@ -73,32 +86,8 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tiers"
-                    aria-expanded="true" aria-controls="tiers">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Tiers</span>
-                </a>
-                <div id="tiers" class="collapse" aria-labelledby="tiers" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Tiers</h6>
-                        <a class="collapse-item" href="#">All Tiers</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#users"
-                    aria-expanded="true" aria-controls="users">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Users</span>
-                </a>
-                <div id="users" class="collapse" aria-labelledby="users" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Users</h6>
-                        <a class="collapse-item" href="#">All Users</a>
-                    </div>
-                </div>
-            </li>
+          
+          
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#referrals"
                     aria-expanded="true" aria-controls="referrals">
@@ -109,6 +98,19 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Referrals</h6>
                         <a class="collapse-item" href="{{route('referral.index')}}">All Referrals</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tiers"
+                    aria-expanded="true" aria-controls="tiers">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Tiers</span>
+                </a>
+                <div id="tiers" class="collapse" aria-labelledby="tiers" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Tiers</h6>
+                        <a class="collapse-item" href="{{route('tier.index')}}">All Tiers</a>
                     </div>
                 </div>
             </li>

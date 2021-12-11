@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Purchase;
 use App\Http\Requests\StorePurchaseRequest;
 use App\Http\Requests\UpdatePurchaseRequest;
+use App\Models\User;
 
 class PurchaseController extends Controller
 {
@@ -15,8 +16,10 @@ class PurchaseController extends Controller
      */
     public function index()
     {
+        $users = User::all();
         $purchases = Purchase::all();
-        return view('purchases.index',compact('purchases'));
+         
+        return view('purchases.index',compact('users','purchases'));
     }
 
     /**
@@ -84,4 +87,6 @@ class PurchaseController extends Controller
     {
         //
     }
+
+   
 }

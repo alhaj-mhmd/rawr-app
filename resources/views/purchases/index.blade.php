@@ -13,33 +13,34 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>User</th>
+                                <th>Created Date</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>User</th>
+                                <th>Created Date</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach ($purchases as $purchase)
                                 <tr>
                                     <td>{{ $purchase->id }}</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
+                                    <td>{{ $purchase->date }}</td>
+                                    <td>{{ $purchase->status }}</td>
+                                    <td>{{ $purchase->amount }}</td>
+                                    <td>{{ $purchase->user->name }}</td>
+                                    <td>{{ $purchase->created_at }}</td>
+                                     
                                 </tr>
                             @endforeach
                         </tbody>

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Reward;
-use App\Http\Requests\StoreRewardRequest;
-use App\Http\Requests\UpdateRewardRequest;
+use App\Models\Purchase;
+use Illuminate\Http\Request;
 use App\Models\User;
 
-class RewardController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,10 @@ class RewardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { $users = User::all();
-        $rewards = Reward::all();
-        return view('rewards.index',compact('users','rewards'));
+    {
+        $users = User::all();
+        return view('users.index',compact('users'));
+
     }
 
     /**
@@ -33,10 +33,10 @@ class RewardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreRewardRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRewardRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -44,10 +44,10 @@ class RewardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reward  $reward
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Reward $reward)
+    public function show($id)
     {
         //
     }
@@ -55,10 +55,10 @@ class RewardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reward  $reward
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reward $reward)
+    public function edit($id)
     {
         //
     }
@@ -66,11 +66,11 @@ class RewardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateRewardRequest  $request
-     * @param  \App\Models\Reward  $reward
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRewardRequest $request, Reward $reward)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,11 +78,13 @@ class RewardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reward  $reward
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reward $reward)
+    public function destroy($id)
     {
         //
     }
+
+   
 }

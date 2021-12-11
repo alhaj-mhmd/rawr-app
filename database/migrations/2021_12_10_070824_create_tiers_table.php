@@ -15,6 +15,8 @@ class CreateTiersTable extends Migration
     {
         Schema::create('tiers', function (Blueprint $table) {
             $table->id();
+            $table->string('tier');
+            $table->float('reward');
             $table->timestamps();
         });
     }

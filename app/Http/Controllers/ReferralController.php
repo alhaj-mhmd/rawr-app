@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Referral;
 use App\Http\Requests\StoreReferralRequest;
 use App\Http\Requests\UpdateReferralRequest;
+use App\Models\Tier;
+use App\Models\User;
 
 class ReferralController extends Controller
 {
@@ -15,8 +17,10 @@ class ReferralController extends Controller
      */
     public function index()
     {
+        $tiers = Tier::all();
+        $users = User::all();
         $referrals = Referral::all();
-        return view('referrals.index',compact('referrals'));
+        return view('referrals.index', compact('tiers', 'users', 'referrals'));
     }
 
     /**

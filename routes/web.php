@@ -6,6 +6,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\RewardController;
 use App\Http\Controllers\TierController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('purchase', PurchaseController::class,[
+Route::resource('purchase', PurchaseController::class, [
     'only' => ['index']
 ]);
-Route::resource('referral', ReferralController::class);
-Route::resource('reward', RewardController::class);
-Route::resource('tier', TierController::class);
+Route::resource('referral', ReferralController::class, [
+    'only' => ['index']
+]);
+Route::resource('reward', RewardController::class, [
+    'only' => ['index']
+]);
+Route::resource('tier', TierController::class, [
+    'only' => ['index']
+]);
+Route::resource('user', UserController::class, [
+    'only' => ['index']
+]);

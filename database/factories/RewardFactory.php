@@ -2,10 +2,17 @@
 
 namespace Database\Factories;
 
+use App\Models\Reward;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RewardFactory extends Factory
-{
+{/**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Reward::class;
+
     /**
      * Define the model's default state.
      *
